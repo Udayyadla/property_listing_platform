@@ -1,18 +1,25 @@
 import { Property } from "../models/property.model.js";
+// export const Home = async (req, res) => {
+//   try {
+//     res.send("Hello world!!!");
+//   } catch (error) {
+//     res.status(500).json({ error: "internal server error" });
+//   }
+// };
 
 export const getAllProperties = async (req, res) => {
   let { page = 1, limit = 10 } = req.query;
-  let skip = (page - 1) * limit;
+  let offset = (page - 1) * limit;
 
   try {
-    const data = await Property.find().skip(skip).limit(limit);
+    const data = await Property.find().skip(offset).limit(limit);
     res.status(200).json(data);
   } catch (error) {
     res.status(500).json({ error: "internal server error" });
   }
 };
 export const filterProperties = async (req, res) => {
-  let { page = 1, limit=10 } = req.query;
+  let { page = 1, limit = 10 } = req.query;
   let skip = (page - 1) * limit;
   try {
     const {
@@ -50,7 +57,7 @@ export const filterProperties = async (req, res) => {
     }
     res.status(200).json({ data });
   } catch (error) {
-    console.log(error.message)
+    console.log(error.message);
     res.status(500).json({ error: "internal server error" });
   }
 };
