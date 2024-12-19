@@ -3,7 +3,7 @@ import { Features } from './Features';
 import { ContactUs } from './ContactUs';
 
 
-export const Properties = () => {
+export const Hero = () => {
     return (
         <div className='container'>
             <div className="hero-section">

@@ -11,9 +11,9 @@ export const Navbar=()=>{
                 <img src={logo} alt="logo"/>
             </div>
             <div className="nav-middle">
-                <Link to="/Home">Home</Link>
+                <Link to="/home">Home</Link>
                 <Link to="/about">About</Link>
-                <Link to="/Hero">Properties</Link>
+                <Link to="/hero">Properties</Link>  
             </div>
             <div className="nav-icons">
             <FontAwesomeIcon icon={faSearch} />
