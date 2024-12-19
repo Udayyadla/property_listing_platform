@@ -1,4 +1,5 @@
 import '../../Styles/Home/Home.css'
+
 export const Home=()=>{
     return (
         <>
