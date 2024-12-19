@@ -11,7 +11,7 @@ export const Navbar=()=>{
                 <img src={logo} alt="logo"/>
             </div>
             <div className="nav-middle">
-                <Link to="/">Home</Link>
+                <Link to="/home">Home</Link>
                 <Link to="/about">About</Link>
                 <Link to="/hero">Properties</Link>  
             </div>
