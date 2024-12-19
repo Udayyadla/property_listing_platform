@@ -1,10 +1,9 @@
-import React from 'react';
 import '../../Styles/Properties/Hero.css';
 import { Features } from './Features';
 import { ContactUs } from './ContactUs';
 
 
-export const Hero = () => {
+export const Properties = () => {
     return (
         <div className='container'>
             <div className="hero-section">
