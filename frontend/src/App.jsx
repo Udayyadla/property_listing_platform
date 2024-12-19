@@ -5,11 +5,15 @@ import { Home } from './components/Home'
 import { Properties } from './Components/Properties/Hero'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Footer } from './Components/About/footer'
+import { PropertyList } from './Components/About/propertylist'
+import { InquiryForm } from './Components/About/inquiryform'
 function App() {
   
   return (
     <>
+    <PropertyList/>
      <Router>
+     <InquiryForm/>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />  
