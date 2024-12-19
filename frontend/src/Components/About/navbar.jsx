@@ -1,4 +1,4 @@
- import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "../../Styles/About/navbar.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';

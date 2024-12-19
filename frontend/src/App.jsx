@@ -1,8 +1,8 @@
 import { Home } from './components/Home/Home'
 import './App.css'
-import { Navbar } from './Components/About/navbar'
+import { Navbar } from './components/About/navbar'
 import { About } from './Components/About/about'
-import { Properties } from './Components/Properties/Hero'
+import { Hero } from './Components/Properties/Hero'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Footer } from './Components/About/footer'
 
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home />} />   
         <Route path="/about" element={<About />} />
-        <Route path="/properties" element={<Properties />} />
+        <Route path="/hero" element={<Hero />} />
       </Routes>
       <Footer/>
     </Router>
