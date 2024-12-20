@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import '../../Styles/Properties/PropertiesDetails.css';
-import { InquiryForm } from "../About/inquiryform";
+import { InquiryForm } from "../InquiryForm/inquiryform";
 
 export const PropertiesDetails = () => {
     const { id } = useParams(); // Extract the id from the URL

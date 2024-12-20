@@ -1,6 +1,6 @@
 import '../../Styles/Home/Home.css'
 import { Link } from 'react-router-dom'; 
-import { PropertyList } from '../About/propertylist';
+import { ImageCorousel } from '../InquiryForm/ImageCorousel';
 
 export const Home=()=>{
     return (
@@ -75,8 +75,8 @@ export const Home=()=>{
                         </div>
                     </div>
                 </div>
+                <ImageCorousel/>
 
-                <PropertyList/>
 
                 {/* Section 3 here: */}
                 <div className="home-s3">

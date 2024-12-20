@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import "../../Styles/About/property.css"
-export const PropertyList=()=>{
+import "../../Styles/About/imageCorousel.css"
+export const ImageCorousel=()=>{
     const [isProperty,setProperty]=useState([])
     const [currentIndex, setCurrentIndex] = useState(0);
 
