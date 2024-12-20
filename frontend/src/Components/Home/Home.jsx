@@ -1,6 +1,5 @@
 import '../../Styles/Home/Home.css'
 import { Link } from 'react-router-dom'; 
-import { ImageCorousel } from '../InquiryForm/ImageCorousel';
 
 export const Home=()=>{
     return (
@@ -75,7 +74,6 @@ export const Home=()=>{
                         </div>
                     </div>
                 </div>
-                <ImageCorousel/>
 
 
                 {/* Section 3 here: */}
