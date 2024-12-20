@@ -6,27 +6,24 @@ export const ContactUs = () => {
             <div className="overlay"></div>
             <div className="form-container">
                 <p className="heading">CONTACT US</p>
+                <h2 className="subheading">Schedule an Appointment</h2>
 
                 <form action="">
                     <div>
                         <label>Name</label>
-                        <input type="text" required/>
+                        <input type="text" />
                     </div>
                     <div>
                         <label>Email</label>
-                        <input type="email" required/>
+                        <input type="email" />
                     </div>
                     <div>
-                        <label>Phone</label>
-                        <input type="tel" required/>
-                    </div>
-                    <div>
-                        <label>Message</label>
+                        <label htmlFor="">Message</label>
                         <textarea name="" id=""></textarea>
                     </div>
-                    <button type="submit">Submit</button>
+                    <button type='submit'>REQUEST A CALL BACK</button>
                 </form>
             </div>
         </div>
     );
-};
+}

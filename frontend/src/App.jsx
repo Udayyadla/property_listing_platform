@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Footer } from './Components/About/footer'
 import { SearchForm } from './Components/Properties/SearchForm'
 import { PropertiesDetails } from './Components/Properties/PropertiesDetails'
+import { InquiryForm } from './Components/About/inquiryform'
 function App() {
 
   return (
@@ -15,7 +16,7 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home/>} />
           <Route path="/about" element={<About />} />
           <Route path="/hero" element={<Hero />} />
           <Route path="/searchForm" element={<SearchForm/>} />
