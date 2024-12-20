@@ -1,7 +1,7 @@
 import '../../Styles/Properties/Hero.css';
 import { Features } from './Features';
 import { ContactUs } from './ContactUs';
-
+import { CompareTool } from '../CompareTool/CompareTool';
 
 export const Hero = () => {
     return (
@@ -14,6 +14,7 @@ export const Hero = () => {
             </div>
 
             {/* Features section */}
+            <br/>
             <Features />
             <ContactUs />
         </div>
