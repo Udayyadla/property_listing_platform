@@ -24,12 +24,12 @@ export const SearchForm = () => {
     
         const requestBody = {
             Location: Location ? Location : undefined,
-            Price: Price ? Price : undefined,  
-            Bedrooms: Bedrooms ? Bedrooms : undefined,
-            Bathrooms: Bathrooms ? Bathrooms : undefined,
+            Price: Price ? parseInt(Price) : undefined,  
+            Bedrooms: Bedrooms ? parseInt(Bedrooms) : undefined,
+            Bathrooms: Bathrooms ? parseInt(Bathrooms) : undefined,
             Type: Type ? Type : undefined,
             Amenities: Amenities.length > 0 ? Amenities : undefined,
-            Size: Size ? Size : undefined,
+            Size: Size ? parseInt(Size) : undefined,
             Status: Status ? Status : undefined,
         };
     
@@ -57,6 +57,7 @@ export const SearchForm = () => {
                 //Not able to fetch..
                 setProperties([]);
                 setError('No properties found for the given criteria.');
+                console.log(data.data)
             }
         } catch (error) {
             setError('Unable to fetch properties, please try again later.');
@@ -140,27 +141,36 @@ export const SearchForm = () => {
                         <label>
                             <input 
                                 type="checkbox" 
-                                value="pool" 
-                                checked={Amenities.includes('pool')} 
-                                onChange={() => handleAmenityChange('pool')} 
+                                value="Pool" 
+                                checked={Amenities.includes('Pool')} 
+                                onChange={() => handleAmenityChange('Pool')} 
                             /> Pool
                         </label>
                         <label>
                             <input 
                                 type="checkbox" 
-                                value="garden" 
-                                checked={Amenities.includes('garden')} 
-                                onChange={() => handleAmenityChange('garden')} 
+                                value="Garden" 
+                                checked={Amenities.includes('Garden')} 
+                                onChange={() => handleAmenityChange('Garden')} 
                             /> Garden
                         </label>
                         
                         <label>
                             <input 
                                 type="checkbox" 
-                                value="gym" 
-                                checked={Amenities.includes('gym')} 
-                                onChange={() => handleAmenityChange('gym')} 
+                                value="Gym" 
+                                checked={Amenities.includes('Gym')} 
+                                onChange={() => handleAmenityChange('Gym')} 
                             /> Gym
+                        </label>
+
+                        <label>
+                            <input 
+                                type="checkbox" 
+                                value="Garage" 
+                                checked={Amenities.includes('Garage')} 
+                                onChange={() => handleAmenityChange('Garage')} 
+                            /> Garage
                         </label>
                     </div>
 
