@@ -1,4 +1,4 @@
- import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "../../Styles/About/navbar.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -11,9 +11,9 @@ export const Navbar=()=>{
                 <img src={logo} alt="logo"/>
             </div>
             <div className="nav-middle">
-                <Link to="/home">Home</Link>
+                <Link to="/">Home</Link>
                 <Link to="/about">About</Link>
-                <Link to="/hero">Properties</Link>  
+                <Link to="/hero">Properties</Link>
             </div>
             <div className="nav-icons">
             <FontAwesomeIcon icon={faSearch} />
