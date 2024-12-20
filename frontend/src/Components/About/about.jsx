@@ -1,4 +1,5 @@
 import '../../Styles/About/about.css'
+import asset5 from '../../assets/Properties_assets/asset 5.jpeg';
 
 export const About = () => {
     return (
@@ -9,7 +10,7 @@ export const About = () => {
             {/* about section */}
             <div className="about-section">
                 <div className="about-image">
-                    <img className='img1' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQwzcdrjohw_3UTlTgOGA4UZ7DMU7iiCvH8JnK7ZQw8LTwJpKqSzXS4PlWxrSyUa3KcRY&usqp=CAU' alt='About Us' />
+                    <img className='img1' src={asset5} alt='About Us' />
                 </div>
                 <div className="about-content">
                     <h1>About Us</h1>
