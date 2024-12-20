@@ -1,4 +1,4 @@
-
+import { ImageCorousel } from "./InquiryForm/ImageCorousel"
 
 export const Home=()=>{
     return (
@@ -71,7 +71,7 @@ export const Home=()=>{
                         </div>
                     </div>
                 </div>
-
+                <ImageCorousel/>
 
                 {/* Section 3 here: */}
                 <div className="home-s3">

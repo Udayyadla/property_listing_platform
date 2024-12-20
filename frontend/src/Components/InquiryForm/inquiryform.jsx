@@ -21,7 +21,7 @@ export const InquiryForm = () => {
 
   return (
     <>
-      <form className="i-form" onSubmit={handleSubmit}>
+      <form className="inquiry-form" onSubmit={handleSubmit}>
         <input
           className="input-field"
           value={email}
