@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../../Styles/About/inquiryform.css"
+import "../../Styles/About/inquiryform.css";
 
 export const InquiryForm = () => {
   const [email, setEmail] = useState("");
@@ -21,32 +21,32 @@ export const InquiryForm = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <input
+          className="input-field"
           value={email}
           type="email"
           placeholder="Enter Email"
           onChange={(e) => setEmail(e.target.value)}
         />
-        <br />
         <input
+          className="input-field"
           value={password}
           type="password"
           placeholder="Enter Password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <br />
         <textarea
+          className="textarea-field"
           value={description}
           placeholder="Description"
           onChange={(e) => setDescription(e.target.value)}
         />
-        <br />
-        <button type="submit">Submit</button>
+        <button className="submit-btn" type="submit">Submit</button>
       </form>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      {success && <p style={{ color: "green" }}>Form submitted successfully!</p>}
+      {error && <p className="message error">{error}</p>}
+      {success && <p className="message success">Form submitted successfully!</p>}
     </>
   );
 };
