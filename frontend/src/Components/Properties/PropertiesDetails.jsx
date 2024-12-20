@@ -72,6 +72,6 @@ export const PropertiesDetails = () => {
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> 
     );
 };
