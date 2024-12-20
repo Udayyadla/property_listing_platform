@@ -1,4 +1,5 @@
 import '../../Styles/Home/Home.css'
+import { Link } from 'react-router-dom'; 
 
 export const Home=()=>{
     return (
@@ -18,7 +19,9 @@ export const Home=()=>{
                     <h3 className="home-s1-h3">Discover your Dream Home with Us</h3>
                     <h1>Find the Perfect <br/> Property for your<br/> Lifestyle</h1>
 
-                    <button className="home-s1-btn">START SEARCHING</button>
+                    <Link to="/searchForm"> 
+                        <button className="home-s1-btn">START SEARCHING</button>
+                    </Link>
                 </div>
 
 
@@ -87,7 +90,7 @@ export const Home=()=>{
                         <div className="card2">
 
                             <img className="card2-image"
-                             src="https://via.placeholder.com/300" 
+                             src="https://images.unsplash.com/photo-1567975722683-29cf4e918c9e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDQ2fHx8ZW58MHx8fHx8" 
                              alt="property image" 
                              />
                             <h4 className="card2-subtitle">Apartment - Queens</h4>
@@ -98,7 +101,7 @@ export const Home=()=>{
 
                         <div className="card2">
                             <img className="card2-image"
-                             src="https://via.placeholder.com/300" 
+                             src="https://plus.unsplash.com/premium_photo-1693493439424-eb93e53b490a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDQ1fHx8ZW58MHx8fHx" 
                              alt="property image" 
                              />
                             <h4 className="card2-subtitle">Apartment - Queens</h4>
@@ -109,7 +112,7 @@ export const Home=()=>{
 
                         <div className="card2">
                             <img className="card2-image"
-                             src="https://via.placeholder.com/300" 
+                             src="https://images.unsplash.com/photo-1550945888-ce50c03c8aeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdXNpbmd8ZW58MHx8MHx8fDA%3D" 
                              alt="property image" 
                              />
                             <h4 className="card2-subtitle">Apartment - Queens</h4>
@@ -169,7 +172,7 @@ export const Home=()=>{
                     <div className="s5-container_1">
                         
                         <img
-                            src="https://via.placeholder.com/300"
+                            src="https://images.unsplash.com/photo-1523562457378-685782b382a6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dG93bnxlbnwwfHwwfHx8MA%3D%3D"
                             alt="image"
                         />
                     </div>
