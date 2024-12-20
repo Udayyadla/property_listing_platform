@@ -37,7 +37,7 @@ export const filterProperties = async (req, res) => {
       Bedrooms,
       Bathrooms,
       Size,
-      status,
+      Status,
       Amenities,
       Price,
     } = req.body;
@@ -48,7 +48,7 @@ export const filterProperties = async (req, res) => {
     if (Bathrooms) filters.Bathrooms = Bathrooms;
     if (Amenities) filters.Amenities = { $all: Amenities };
     if (Size) filters.Size = { $gte: Size };
-    if (status) filters.status = status;
+    if (Status) filters.Status = Status;
     if (Price) filters.Price = { $gte: Price };
     const data = await Property.aggregate([
       {
