@@ -41,13 +41,20 @@
     height: 600px;
 }
 
-.heading {
+.heading,
+.subheading {
     text-align: center;
 }
 
 .heading {
-    font-size: 2rem;
+    font-size: 1.2rem;
     color: gray;
+    margin-bottom: 30px;
+}
+
+.subheading {
+    font-size: 2.2rem;
+    font-weight: 100;
     margin-bottom: 30px;
 }
 
@@ -90,12 +97,11 @@
     background-color: #34A0A4;
     color: white;
     border: none;
-    border-radius: 30px;
+    border-radius: 25px;
     cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 16px;
     width: 50%;
-    max-width: 200px;
+    max-width: 250px;
     margin-top: 20px;
 }
 
@@ -123,6 +129,10 @@
         width: 90%;
     }
 
+    .subheading {
+        font-size: 1.8rem;
+    }
+
     .form-container button {
         width: 70%;
         max-width: 200px;
@@ -136,9 +146,12 @@
     }
 
     .heading {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
+    .subheading {
+        font-size: 1.5rem;
+    }
 
     .form-container input,
     .form-container textarea {
