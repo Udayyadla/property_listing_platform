@@ -7,18 +7,23 @@ export const Features = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
+    const [infiniteScroll, setInfiniteScroll] = useState(false);
+    const [hasMore, setHasMore] = useState(true);
 
     let navigate = useNavigate();
 
     // Fetch properties from the API
-    const fetchProperties = async (page) => {
+    const fetchProperties = async (page, append = false) => {
         try {
             const response = await fetch(`https://property-listing-platform.onrender.com/api/getProps?page=${page}&limit=6`);
             if (!response.ok) {
                 throw new Error(`HTTP Error! Status: ${response.status}`);
             }
             const data = await response.json();
-            setProperties(data);
+            setProperties(prev => append ? [...prev, ...data] : data);
+            if (data.length < 6) {
+                setHasMore(false);
+            }
         } catch (err) {
             setError(err.message);
         } finally {
@@ -29,9 +34,34 @@ export const Features = () => {
     const memoizedProperties = useMemo(() => properties, [properties]);
 
     useEffect(() => {
-        setLoading(true);
-        fetchProperties(currentPage);
-    }, [currentPage]);
+        if (!infiniteScroll) {
+            setLoading(true);
+            fetchProperties(currentPage);
+        }
+    }, [currentPage, infiniteScroll]);
+
+    useEffect(() => {
+        if (infiniteScroll) {
+            const handleScroll = () => {
+                if (
+                    window.innerHeight + document.documentElement.scrollTop >=
+                        document.documentElement.offsetHeight - 100 &&
+                    hasMore &&
+                    !loading
+                ) {
+                    setLoading(true);
+                    setCurrentPage(prevPage => {
+                        const nextPage = prevPage + 1;
+                        fetchProperties(nextPage, true);
+                        return nextPage;
+                    });
+                }
+            };
+
+            window.addEventListener("scroll", handleScroll);
+            return () => window.removeEventListener("scroll", handleScroll);
+        }
+    }, [infiniteScroll, hasMore, loading]);
 
     const handleNextPage = () => {
         setCurrentPage(prevPage => prevPage + 1);
@@ -41,7 +71,14 @@ export const Features = () => {
         setCurrentPage(prevPage => (prevPage > 1 ? prevPage - 1 : 1));
     };
 
-    if (loading) {
+    const toggleMode = () => {
+        setInfiniteScroll(prev => !prev);
+        setCurrentPage(1);
+        setProperties([]);
+        setHasMore(true);
+    };
+
+    if (loading && properties.length === 0) {
         return (
             <div className="loading-container">
                 <div className="loading-spinner"></div>
@@ -58,9 +95,8 @@ export const Features = () => {
         );
     }
 
-
     function handleNavigate(id) {
-        navigate(`/propertiesDetails/${id}`)
+        navigate(`/propertiesDetails/${id}`);
     }
 
     async function handleChangeSort(e) {
@@ -72,23 +108,28 @@ export const Features = () => {
             }
             const data = await response.json();
             setProperties(data);
-        }
-        catch (error) {
+        } catch (error) {
             console.log(error);
         }
-
     }
 
     return (
         <div>
             <div className="features">
                 <h1>Property Listings</h1>
+                <div className="ft-sort-page">
                 <div>
                     <select onChange={handleChangeSort}>
                         <option value="">Sort By Price</option>
                         <option value="desc">High To Low</option>
                         <option value="asc">Low To High</option>
                     </select>
+                </div>
+                <div>
+                    <button onClick={toggleMode} className="infinte-scrolling">
+                        {infiniteScroll ? "Switch to Pagination" : "Switch to Infinite Scroll"}
+                    </button>
+                </div>
                 </div>
                 <div className="property-grid">
                     {memoizedProperties.map((property) => (
@@ -114,21 +155,24 @@ export const Features = () => {
                                 <p>{property.Location}</p>
                                 <p><strong>Price:</strong> ₹{property.Price}</p>
                                 <div className="property-specs">
-                                    <span>{property.Size}  Sqft</span>
-                                    <span>{property.Bedrooms}  Bed</span>
-                                    <span>{property.Bathrooms}  Bath</span>
+                                    <span>{property.Size} Sqft</span>
+                                    <span>{property.Bedrooms} Bedroom</span>
+                                    <span>{property.Bathrooms} Bathroom</span>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
-                <div className="pagination">
-                    <button onClick={handlePreviousPage} disabled={currentPage === 1}>
-                        Previous
-                    </button>
-                    <span>Page {currentPage}</span>
-                    <button onClick={handleNextPage} disabled={currentPage === 7}>Next</button>
-                </div>
+                {!infiniteScroll && (
+                    <div className="pagination">
+                        <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+                            Previous
+                        </button>
+                        <span>Page {currentPage}</span>
+                        <button onClick={handleNextPage} disabled={!hasMore}>Next</button>
+                    </div>
+                )}
+                {loading && <p>Loading more properties...</p>}
             </div>
         </div>
     );
