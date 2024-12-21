@@ -23,48 +23,6 @@ h2 {
   margin-bottom: 15px;
 }
 
-/* Property selection styles */
-.property-selection {
-  margin-bottom: 30px;
-}
-
-.properties-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-#property-card {
-  background: white;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  width: 23%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-#property-card h3 {
-  font-size: 1.1em;
-  margin-top: 10px;
-}
-
-#property-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-#property-card p {
-  font-size: 1em;
-  margin-top: 10px;
-}
-
-input[type="checkbox"] {
-  margin-right: 10px;
-}
-
 /* Comparison table styles */
 .compare-container {
   margin-top: 40px;
@@ -73,6 +31,7 @@ input[type="checkbox"] {
 .comparison-table {
   display: flex;
   flex-direction: column;
+  overflow-x: auto;  
 }
 
 .table-header {
@@ -80,7 +39,7 @@ input[type="checkbox"] {
   font-weight: bold;
   background-color: #f1f1f1;
   padding: 10px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .table-header-item-feature {
@@ -98,13 +57,14 @@ input[type="checkbox"] {
 .table-row {
   display: flex;
   border-bottom: 1px solid #ddd;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;  
 }
 
 .table-row-header {
   width: 150px;
   padding: 10px;
   text-align: left;
+  font-weight: bold;
   background-color: #f9f9f9;
 }
 
@@ -126,109 +86,100 @@ input[type="checkbox"] {
 }
 
 /* Responsive styles */
+
+
 @media (max-width: 1024px) {
-  /* Properties List */
-  .properties-list {
-    justify-content: space-around;
+  .comparison-table {
+    display: block;
   }
 
-  #property-card {
-    width: 48%; /* Display 2 properties per row */
-    margin-bottom: 20px;
-  }
-
-  /* Comparison Table */
   .table-header {
-    flex-direction: column;
+    font-weight: bold;
+    margin-bottom: 10px;
   }
 
-  .table-header-item-feature, .table-header-item {
-    text-align: left;
+  .table-header-item-feature {
+    display: block;
+  }
+
+  .table-row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;  
+  }
+
+  .table-row-header {
+    background-color: #f1f1f1;
     padding: 8px;
-    width: auto;
-  }
-
-  .table-row {
-    flex-direction: column;
-  }
-
-  .table-row-header {
-    width: 100%;
-    background-color: #f9f9f9;
+    font-weight: bold;
   }
 
   .table-row-item {
-    width: 100%;
+    padding: 8px;
     text-align: left;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Properties List */
-  #property-card {
-    width: 100%; /* Display 1 property per row */
-    margin-bottom: 20px;
+    word-wrap: break-word;
+    font-size: 14px;
   }
 
-  /* Comparison Table */
-  .table-header {
-    flex-direction: column;
-    align-items: flex-start;
+  .table-row-item span {
+    font-weight: bold;
   }
 
-  .table-header-item-feature, .table-header-item {
-    text-align: left;
-    padding: 5px;
-    width: auto;
-  }
-
-  .table-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .table-row-header {
-    width: 100%;
-    background-color: #f9f9f9;
+  /* Ensure horizontal scroll for mobile screens */
+  .comparison-table {
+    overflow-x: auto;
+    white-space: nowrap;
   }
 
   .table-row-item {
-    width: 100%;
-    text-align: left;
+    display: inline-block;
+    min-width: 100px;
+    padding: 8px;
   }
 }
 
 @media (max-width: 480px) {
-  /* Properties List */
-  #property-card {
-    width: 100%; 
-    margin-bottom: 15px;
-  }
-
-  /* Comparison Table */
+  /* Comparison Table - For mobile screens */
   .table-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .table-header-item-feature, .table-header-item {
-    text-align: left;
-    padding: 5px;
-    width: auto;
+    display: none; 
   }
 
   .table-row {
-    flex-direction: column;
-    align-items: flex-start;
+    display: block;
+    margin-bottom: 15px;
   }
 
   .table-row-header {
-    width: 100%;
+    
     background-color: #f9f9f9;
+    padding: 8px;
+    font-weight: bold;
   }
 
   .table-row-item {
-    width: 100%;
+    font-size: 12px;
+    padding: 5px;
     text-align: left;
+    word-wrap: break-word;
+    display: block;
+    overflow: hidden;
+  }
+
+  .table-row-item span {
+    font-weight: bold;
+  }
+
+  /* Reduce padding and font size to ensure readability */
+  .table-row-header {
+    padding: 6px;
+  }
+
+  .table-row-item {
+    padding: 4px;
+    word-wrap: break-word;
+  }
+
+  .table-row-item span {
+    font-size: 12px;
   }
 }
