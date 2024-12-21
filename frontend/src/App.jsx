@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Footer } from './Components/About/footer'
 import { SearchForm } from './Components/Properties/SearchForm'
 import { PropertiesDetails } from './Components/Properties/PropertiesDetails'
+import { NavFavourites } from './Components/About/favourite';
 
 function App() {
   
@@ -21,6 +22,7 @@ function App() {
           <Route path="/hero" element={<Hero />} />
           <Route path="/searchForm" element={<SearchForm/>} />
           <Route path='/propertiesDetails/:id' element={<PropertiesDetails/>} />
+          <Route path='/Navfavourite' element={<NavFavourites/>}/>
         </Routes>
       </Router>
       <Footer/>

@@ -1,4 +1,4 @@
-.favourites-container {
+/* .favourites-container {
     padding: 40px;
     text-align: center;
 }
@@ -33,4 +33,30 @@
 .favourite-card p {
     font-size: 1.2rem;
     color: #555;
+} */
+.DeleteIcon {
+  position: relative;
+  top: 2px;
+  left: 299px;
+  height: 30px;
+  width: 50px;
+}
+.fav-status{
+    position: absolute;
+    margin-top: 45px;
+    margin-left: 10px;
+}
+.fav-status span {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 20px;
+}
+@media (max-width:576px){
+    .DeleteIcon {
+        left: 259px;
+    
+      }
 }
