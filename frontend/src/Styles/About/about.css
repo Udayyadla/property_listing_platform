@@ -7,9 +7,9 @@
 
 /* hero section */
 .hero-about-container {
-    margin: 50px auto;
+    margin: 25px auto;
     height: 75vh;
-    width: 90%;
+    width: 98%;
     background-image: url("https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-size: cover;
     background-position: center;
@@ -20,8 +20,8 @@
     align-items: center;
 }
 
-.hero-about-container h1 {
-    font-size: 4.5rem;
+.hero-about-container h3 {
+    font-size: 5rem;
     text-align: center;
     color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -38,6 +38,7 @@
     border-radius: 15px;
     overflow: hidden;
     flex-wrap: wrap;
+    background: linear-gradient(109.6deg, rgb(0, 37, 84) 11.2%, rgba(0, 37, 84, 0.32) 100.2%);
 }
 
 .about-image, .about-content {
@@ -66,7 +67,7 @@
     line-height: 1.8;
     margin-bottom: 15px;
     font-size: 1rem;
-    color: #333;
+    color: white;
 }
 
 /* center */
@@ -74,6 +75,12 @@
     text-align: center;
     font-size: 1.3rem; 
     padding: 10px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+.center h3{
+    font-size: 1.3rem;
+    margin-bottom: 45px;
+    
 }
 
 /* Media Queries */
