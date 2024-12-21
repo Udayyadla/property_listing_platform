@@ -1,6 +1,6 @@
-import { Home } from './components/Home/Home'
+import { Home } from './Components/Home/Home'
 import './App.css'
-import { Navbar } from './components/About/navbar'
+import { Navbar } from './Components/About/navbar';
 import { About } from './Components/About/about'
 
 import { Hero } from './Components/Properties/Hero'
@@ -12,10 +12,9 @@ import { PropertiesDetails } from './Components/Properties/PropertiesDetails'
 function App() {
   
   return (
-    <>
-
+    <>  
       <Router>
-        <Navbar />
+      <Navbar /> 
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/about" element={<About />} />

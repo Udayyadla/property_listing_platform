@@ -1,0 +1,36 @@
+.favourites-container {
+    padding: 40px;
+    text-align: center;
+}
+
+.favourites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.favourite-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.favourite-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.favourite-card h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.favourite-card p {
+    font-size: 1.2rem;
+    color: #555;
+}

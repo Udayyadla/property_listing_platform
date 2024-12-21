@@ -1,13 +1,13 @@
 import "../../Styles/About/footer.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faYoutube, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import logo from '../../assets/Properties_assets/logo.jpg';
+import logo1 from '../../assets/Properties_assets/logo1.jpg';
 export const Footer=()=>{
     return (
         <footer className="footer">
         <div className="footer-container">
             <div className="footer-left">
-                <img src={logo} alt="logo" className="footer-logo" />
+                <img src={logo1} alt="logo" className="footer-logo" />
             </div>
             <div className="footer-middle">
                 <h3>About Us</h3>

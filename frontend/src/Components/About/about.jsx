@@ -1,5 +1,6 @@
 import '../../Styles/About/about.css'
 import asset5 from '../../assets/Properties_assets/asset 5.jpeg';
+import asset10 from '../../assets/Properties_assets/asset 10.jpeg';
 
 export const About = () => {
     return (
@@ -31,7 +32,7 @@ export const About = () => {
                     <p>At Real Estate, we pride ourselves on being a trusted and reputable name in the real estate industry. With years of experience and a dedicated team of professionals, we are committed to providing exceptional service to our clients. Whether you are buying, selling, or renting, we are here to guide you throughout the entire process and ensure a smooth and successful transaction.</p>
                 </div>
                 <div className="about-image">
-                    <img className='img1' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQwzcdrjohw_3UTlTgOGA4UZ7DMU7iiCvH8JnK7ZQw8LTwJpKqSzXS4PlWxrSyUa3KcRY&usqp=CAU' alt='About Us' />
+                    <img className='img1' src={asset10} alt='About Us' />
                 </div>
             </div>
         </div>

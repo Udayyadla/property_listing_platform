@@ -1,53 +1,66 @@
 import { useState } from "react";
-import "../../Styles/About/inquiryform.css";
+import "../../Styles/About/InquiryForm.css";
 
 export const InquiryForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [description, setDescription] = useState("");
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!email || !password || !description) {
-      setError("All fields are mandatory!");
-      setSuccess(false);
-    } else {
-      setError("");
-      setSuccess(true);
-    }
+    alert(`Thank you, ${formData.name}. We have received your message!`);
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
-    <>
-      <form className="inquiry-form" onSubmit={handleSubmit}>
-        <h1>Inquiry Form</h1>
-        <input
-          className="input-field"
-          value={email}
-          type="email"
-          placeholder="Enter Email"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          className="input-field"
-          value={password}
-          type="password"
-          placeholder="Enter Password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <textarea
-          className="textarea-field"
-          value={description}
-          placeholder="Description"
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <button className="submit-btn" type="submit">Submit</button>
+    <div className="form-container">
+      <h2 className="form-title">Enquiry Form</h2>
+      <form onSubmit={handleSubmit} className="enquiry-form">
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></textarea>
+        </div>
+        <button type="submit" className="submit-button">
+          Send Message
+        </button>
       </form>
-
-      {error && <p className="message error">{error}</p>}
-      {success && <p className="message success">Form submitted successfully!</p>}
-    </>
+    </div>
   );
 };
+
+
