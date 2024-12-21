@@ -1,6 +1,7 @@
 import  { useState, useEffect, useMemo } from "react";
 import '../../Styles/Properties/Features.css';
 import { useNavigate } from "react-router-dom";
+import { debounce } from "lodash";
 
 export const Features = () => {
     const [properties, setProperties] = useState([]);
@@ -42,10 +43,10 @@ export const Features = () => {
 
     useEffect(() => {
         if (infiniteScroll) {
-            const handleScroll = () => {
+            const handleScroll = debounce(() => {
                 if (
                     window.innerHeight + document.documentElement.scrollTop >=
-                        document.documentElement.offsetHeight - 100 &&
+                    document.documentElement.offsetHeight - 300 &&
                     hasMore &&
                     !loading
                 ) {
@@ -56,12 +57,14 @@ export const Features = () => {
                         return nextPage;
                     });
                 }
-            };
-
+            }, 300);
+    
             window.addEventListener("scroll", handleScroll);
+    
             return () => window.removeEventListener("scroll", handleScroll);
         }
     }, [infiniteScroll, hasMore, loading]);
+    
 
     const handleNextPage = () => {
         setCurrentPage(prevPage => prevPage + 1);
@@ -172,7 +175,7 @@ export const Features = () => {
                         <button onClick={handleNextPage} disabled={!hasMore}>Next</button>
                     </div>
                 )}
-                {loading && <p>Loading more properties...</p>}
+                {loading && infiniteScroll && <p className="infinite-loading">Loading more properties...</p>}
             </div>
         </div>
     );
