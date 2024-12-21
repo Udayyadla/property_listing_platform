@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 import "../../Styles/About/navbar.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import logo from '../../assets/Properties_assets/logo.jpg';
+import { faSearch ,faHeart} from '@fortawesome/free-solid-svg-icons';
+import logo1 from '../../assets/Properties_assets/logo1.jpg';
 
 export const Navbar=()=>{
     return(
         <div className="navbar">
             <div className="logo">
-                <img src={logo} alt="logo"/>
+                <img src={logo1} alt="logo"/>
             </div>
             <div className="nav-middle">
                 <Link to="/">Home</Link>
@@ -17,6 +17,9 @@ export const Navbar=()=>{
             </div>
             <div className="nav-icons">
             <FontAwesomeIcon icon={faSearch} />
+            <Link to="/Navfavourite">
+                <FontAwesomeIcon icon={faHeart} className='Nav-favourite-icon' />
+            </Link>
             </div>
        </div>
     )
