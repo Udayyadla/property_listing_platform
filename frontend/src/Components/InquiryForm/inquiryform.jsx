@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../../Styles/About/InquiryForm.css";
+import "../../Styles/About/inquiryForm.css";
 
 export const InquiryForm = () => {
   const [formData, setFormData] = useState({
