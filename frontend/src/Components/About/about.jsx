@@ -7,9 +7,9 @@ export const About = () => {
   return (
     <div>
       <div className="hero-about-container">
-        <h1>
+        <h3>
           Discover Our Story <br /> and Expertise
-        </h1>
+        </h3>
       </div>
       {/* about section */}
       <div className="about-section">

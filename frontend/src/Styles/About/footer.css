@@ -1,8 +1,7 @@
 /* footer.css */
 
 .footer {
-    background: #333;
-    color: #fff;
+    background: linear-gradient(to right, #868f96 0%, #596164 100%);    color: #fff;
     padding: 40px 0;
     text-align: left;
 }
