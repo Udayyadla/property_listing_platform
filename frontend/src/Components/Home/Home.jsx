@@ -98,7 +98,7 @@ export const Home=()=>{
                             <h4 className="card2-subtitle">Apartment - Queens</h4>
                             <h3 className="card2-title">Modern Stylish Apartment</h3>
                             <p className="card2-desc">Description of the property goes here.</p>
-                            <p className="card2-price">$500,000</p>
+                            <p className="card2-price">Rs.880,000</p>
                         </div>
 
                         <div className="card2">
@@ -109,7 +109,7 @@ export const Home=()=>{
                             <h4 className="card2-subtitle">Apartment - Queens</h4>
                             <h3 className="card2-title">Contemporary Apartments</h3>
                             <p className="card2-desc">Description of the property goes here.</p>
-                            <p className="card2-price">$500,000</p>
+                            <p className="card2-price">Rs.300,000</p>
                         </div>
 
                         <div className="card2">
@@ -120,7 +120,7 @@ export const Home=()=>{
                             <h4 className="card2-subtitle">Apartment - Queens</h4>
                             <h3 className="card2-title">Suburban Single-Family Homes</h3>
                             <p className="card2-desc">Description of the property goes here.</p>
-                            <p className="card2-price">$500,000</p>
+                            <p className="card2-price">Rs.550,000</p>
                         </div>
                     </div>
                 </div>

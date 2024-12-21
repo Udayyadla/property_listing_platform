@@ -86,7 +86,7 @@ label {
 
 /* Property List */
 .property-list {
-  margin-top: 40px;
+  margin: 5em;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
@@ -121,6 +121,232 @@ label {
 
 .property-card p strong {
   color: #333;
+}
+
+/* Compare Button */
+.compare-button {
+  padding: 12px 20px;
+  font-size: 18px;
+  background-color: #28a745; /* Green color to indicate 'action' */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 100%; /* Makes button full width */
+  box-sizing: border-box;
+}
+
+.compare-button:hover {
+  background-color: #218838; 
+  transform: scale(1.05); /* Search Form */
+  .search-bar {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  .search-bar h1 {
+    font-size: 2em;
+    text-align: center;
+  }
+  
+  .search-bar form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Input fields, select dropdowns */
+  input[type="text"],
+  input[type="number"],
+  select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  input:disabled,
+  select:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+  }
+  
+  /* Labels */
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Amenities Section */
+  .amenities-section label {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  .amenities-section input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  /* Search Button */
+  .search-button {
+    padding: 12px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .search-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .search-button:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  
+  /* Error message */
+  .error {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+  }
+  
+  /* Property List */
+  .property-list {
+    margin: 5em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .property-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .property-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .property-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  .property-card p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .property-card p strong {
+    color: #333;
+  }
+
+
+
+
+  /* Compare Button */
+  .compare-button {
+    padding: 12px 20px;
+    font-size: 18px;
+    background-color: #28a745; /* Green color to indicate 'action' */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%; /* Makes button full width */
+    box-sizing: border-box;
+  }
+  
+  .compare-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+  
+  .compare-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  /* Compare Button Section */
+  .compare-button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .compare-button-container .compare-button {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+
+  @media (max-width: 768px) {
+    .search-bar {
+      padding: 15px;
+    }
+  
+    .property-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .property-card {
+      padding: 10px;
+    }
+  
+    .compare-button-container .compare-button {
+      max-width: 80%; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .property-list {
+      grid-template-columns: 1fr;
+    }
+  
+    .compare-button-container .compare-button {
+      max-width: 100%; 
+    }
+  }
+  
+}
+
+.compare-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Compare Button Section */
+.compare-button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.compare-button-container .compare-button {
+  max-width: 300px; 
+  margin: 0 auto; 
 }
 
 /* Responsive Design */
