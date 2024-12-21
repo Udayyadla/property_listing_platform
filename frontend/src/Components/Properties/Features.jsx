@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import  { useState, useEffect, useMemo } from "react";
 import '../../Styles/Properties/Features.css';
 import { useNavigate } from "react-router-dom";
 
