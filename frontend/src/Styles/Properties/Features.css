@@ -378,3 +378,7 @@
     padding: 15px;
     flex-wrap: wrap;
 }
+
+.infinite-loading{
+    font-size: 18px;
+}
