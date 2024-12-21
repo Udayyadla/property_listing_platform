@@ -56,15 +56,15 @@ body {
   
   
   .home-s1-btn {
-    margin-top: 8vh;
+    margin-top: 10vh;
     background-color: rgb(69, 169, 199);
     border: none;
     padding: 13px 20px;
     border-radius: 25px;
-    width: 20vh;
-    height: 6vh;
+    width: 28vh;
+    height: 7vh;
     color: white;
-    font-size: 1.5vh;
+    font-size: 2vh;
     cursor: pointer;
   }
   
@@ -241,15 +241,15 @@ body {
     text-align: start;
   }
   .s4-container_1>button{
-    margin-top: 2vh;
+    margin-top: 3vh;
     background-color: rgb(69, 169, 199);
     border: none;
     padding: 13px 20px;
     border-radius: 25px;
-    width: 20vh;
-    height: 6vh;
+    width: 25vh;
+    height: 7vh;
     color: white;
-    font-size: 1.4vh;
+    font-size: 1.8vh;
     cursor: pointer;
   }
   
@@ -327,15 +327,16 @@ body {
   }
   
   .s5-container_2>button{
-    margin-top: 2vh;
+    margin-top: 4vh;
+    margin-left: 35%;
     background-color: rgb(69, 169, 199);
     border: none;
     padding: 13px 20px;
     border-radius: 25px;
-    width: 20vh;
-    height: 6vh;
+    width: 25vh;
+    height: 7vh;
     color: white;
-    font-size: 1.4vh;
+    font-size: 2vh;
     cursor: pointer;
   }
   

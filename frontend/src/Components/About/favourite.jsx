@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import "../../Styles/About/favourite.css";
 import {  useState } from "react";
 export const NavFavourites = () => {
@@ -24,8 +24,11 @@ export const NavFavourites = () => {
             const property = item.property; // Access the 'property' field
             return (
               <div key={index} className="property-card-1">
+                
+            {/* <FontAwesomeIcon icon="fa-solid fa-trash" /> */}
+
                 <FontAwesomeIcon
-                  icon={faDeleteLeft}
+                  icon={faTrash}
                   className="DeleteIcon"
                   onClick={() => removeHandler(index)}
                 />

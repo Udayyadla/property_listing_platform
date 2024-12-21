@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import '../../Styles/Properties/SearchForm.css';
 import { CompareTool } from "../CompareTool/CompareTool";
 
@@ -12,27 +12,29 @@ export const SearchForm = () => {
     const [Size, setSize] = useState(0);
     const [Status, setStatus] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    
+
     // Track fetched properties
     const [properties, setProperties] = useState([]);
     const [error, setError] = useState(null);
-    
+
     // Track selected properties for comparison
     const [compProperties, setCompProperties] = useState([]);
-    
+
     // Track visibility of checkboxes
     const [isCheckboxVisible, setIsCheckboxVisible] = useState(false);
-    
+
     const API_URL = 'https://property-listing-platform.onrender.com/api/filter';
-    
-    async function handleSubmit(e) {
-        e.preventDefault();
+
+    // Debounce delay (e.g., 500ms)
+    const debounceTimeout = useRef(null);
+
+    const fetchProperties = async () => {
         setIsLoading(true);
         setError(null);
-    
+
         const requestBody = {
             Location: Location || undefined,
-            Price: Price ? parseInt(Price) : undefined,  
+            Price: Price ? parseInt(Price) : undefined,
             Bedrooms: Bedrooms ? parseInt(Bedrooms) : undefined,
             Bathrooms: Bathrooms ? parseInt(Bathrooms) : undefined,
             Type: Type || undefined,
@@ -40,7 +42,7 @@ export const SearchForm = () => {
             Size: Size ? parseInt(Size) : undefined,
             Status: Status || undefined,
         };
-    
+
         try {
             const response = await fetch(API_URL, {
                 method: 'POST',
@@ -49,11 +51,11 @@ export const SearchForm = () => {
                 },
                 body: JSON.stringify(requestBody)
             });
-    
+
             if (!response.ok) {
                 throw new Error('Failed to fetch properties.');
             }
-    
+
             const data = await response.json();
             if (data.data && data.data.length > 0) {
                 setProperties(data.data);
@@ -67,7 +69,7 @@ export const SearchForm = () => {
         } finally {
             setIsLoading(false);
         }
-    }
+    };
 
     const handleAmenityChange = (amenity) => {
         setAmenities(prev => 
@@ -85,15 +87,30 @@ export const SearchForm = () => {
         });
     };
 
-    // Toggle visibility of checkboxes
     const toggleCheckboxVisibility = () => {
         setIsCheckboxVisible(prev => !prev);
     };
 
+    const handleSearchClick = () => {
+        if (debounceTimeout.current) {
+            clearTimeout(debounceTimeout.current); // Clear the previous timeout
+        }
+
+        debounceTimeout.current = setTimeout(() => {
+            fetchProperties(); // Execute the search after the debounce delay
+        }, 500); // 500ms delay
+    };
+
+    useEffect(() => {
+        if (!Location && !Price && !Bedrooms && !Bathrooms && !Type && !Size && !Status && Amenities.length === 0) {
+            setProperties([]); // Clear results if no filters
+        }
+    }, [Location, Price, Bedrooms, Bathrooms, Type, Amenities, Size, Status]);
+
     return (
         <>
             <div className="search-bar">
-                <form onSubmit={handleSubmit}>
+                <form>
                     <h1>Search Properties</h1>
                     <input
                         type="text"
@@ -172,7 +189,7 @@ export const SearchForm = () => {
                             /> Garage
                         </label>
                     </div>
-                    <button type="submit" className="search-button" disabled={isLoading}>
+                    <button type="button" className="search-button" onClick={handleSearchClick} disabled={isLoading}>
                         {isLoading ? 'Loading...' : 'Search'}
                     </button>
                 </form>
@@ -191,7 +208,6 @@ export const SearchForm = () => {
                 <div className="property-list">
                     {properties.map((property) => (
                         <div key={property._id} className="property-card">
-                            {/* Conditionally render the checkbox */}
                             {isCheckboxVisible && (
                                 <input 
                                     type="checkbox"
@@ -214,7 +230,6 @@ export const SearchForm = () => {
                 </div>
             )}
 
-            {/* Pass selected properties to CompareTool */}
             <CompareTool compProperties={compProperties} />
         </>
     );

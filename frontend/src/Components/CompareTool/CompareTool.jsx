@@ -4,7 +4,7 @@ import '../../Styles/CompareTool/compareTool.css';
 export const CompareTool = ({ compProperties }) => {
   const [selectedProperties, setSelectedProperties] = useState([]);
 
-  // Ensure that selected properties are reset when compProperties changes
+
   useEffect(() => {
     setSelectedProperties(compProperties);
   }, [compProperties]);
