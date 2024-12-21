@@ -20,12 +20,12 @@ export const InquiryForm = () => {
   };
 
   return (
-    <div className="form-container">
-      <h2 className="form-title">Enquiry Form</h2>
+    <div className="enquiry-form-container">
+      <h2 className="enquiry-form-title">Enquiry Form</h2>
       <form onSubmit={handleSubmit} className="enquiry-form">
-        <div className="form-group">
-          <label htmlFor="name">Name</label>
-          <input
+        <div className="enquiry-form-group">
+          <label className="qf-label" htmlFor="name">Name</label>
+          <input className="qf-input"
             type="text"
             id="name"
             name="name"
@@ -34,9 +34,9 @@ export const InquiryForm = () => {
             required
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
+        <div className="enquiry-form-group">
+          <label className="qf-label" htmlFor="email">Email</label>
+          <input className="qf-input"
             type="email"
             id="email"
             name="email"
@@ -45,9 +45,9 @@ export const InquiryForm = () => {
             required
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="message">Message</label>
-          <textarea
+        <div className="enquiry-form-group">
+          <label className="qf-label" htmlFor="message">Message</label>
+          <textarea className="eq-textarea"
             id="message"
             name="message"
             value={formData.message}
@@ -55,7 +55,7 @@ export const InquiryForm = () => {
             required
           ></textarea>
         </div>
-        <button type="submit" className="submit-button">
+        <button type="submit" className="enquiry-submit-button">
           Send Message
         </button>
       </form>
