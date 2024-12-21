@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import '../../Styles/Properties/SearchForm.css';
 import { CompareTool } from "../CompareTool/CompareTool";
 

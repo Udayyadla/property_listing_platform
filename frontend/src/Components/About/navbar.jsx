@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch ,faHeart} from '@fortawesome/free-solid-svg-icons';
 import logo1 from '../../assets/Properties_assets/logo1.jpg';
 
+
 export const Navbar=()=>{
     return(
         <div className="navbar">
@@ -16,7 +17,10 @@ export const Navbar=()=>{
                 <Link to="/hero">Properties</Link>
             </div>
             <div className="nav-icons">
-            <FontAwesomeIcon icon={faSearch} />
+            {/* <FontAwesomeIcon icon={faSearch} /> */}
+            <Link to="/searchForm">
+                <FontAwesomeIcon icon={faSearch} className='Nav-search-icon' />
+            </Link>
             <Link to="/Navfavourite">
                 <FontAwesomeIcon icon={faHeart} className='Nav-favourite-icon' />
             </Link>
